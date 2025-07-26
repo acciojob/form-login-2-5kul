@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <title>Form Alert Example</title>
+  <script>
+    function showAlert(event) {
+      event.preventDefault(); // Prevent form submission
 
+      // Get form field values
+      var firstName = document.forms["userForm"]["First Name"].value;
+      var lastName = document.forms["userForm"]["Last Name"].value;
+      var phoneNumber = document.forms["userForm"]["Phone Number"].value;
+      var emailID = document.forms["userForm"]["Email ID"].value;
+
+      // Format the alert message
+      var message = "First Name: " + firstName + 
+                    " Last Name: " + lastName + 
+                    " Phone Number: " + phoneNumber + 
+                    " Email ID: " + emailID;
+
+      // Show alert
+      alert(message);
+    }
+  </script>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <h2>User Information Form</h2>
+  <form name="userForm" onsubmit="showAlert(event)">
+    <label for="fname">First Name:</label>
+    <input type="text" name="First Name" id="fname" required><br><br>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" name="Last Name" id="lname" required><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" name="Phone Number" id="phone" required><br><br>
+
+    <label for="email">Email ID:</label>
+    <input type="email" name="Email ID" id="email" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
 
 </body>
-
 </html>
